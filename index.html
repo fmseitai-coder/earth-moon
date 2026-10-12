@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地球と月のダンス — 北極の真上から見る</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>地球と月のダンス</h1>
+  <p>北極の真上から見た、地球と月。</p>
+  <p><small>あわせてどうぞ：<a href="../moon-age/">月齢カレンダー</a>　<a href="../earth/">地球の傾きと四季</a></small></p>
+</header>
+
+<main>
+  <section id="stage">
+    <canvas id="scene" width="960" height="600" role="img" aria-label="太陽の光を受ける地球と、そのまわりを回る月を、北極の真上から見た図"></canvas>
+    <p id="note"><small>縮尺は実際と異なります。実際の月は、地球の直径の約30倍も遠くにあり、大きさは地球の約4分の1です。この図では、見やすいように、月を近く、大きく描いています。</small></p>
+    <div class="row">
+      <button id="play">一時停止</button>
+      <select id="speed" aria-label="進む速さ">
+        <option value="3600000">ゆっくり（1時間/秒）</option>
+        <option value="21600000" selected>ふつう（6時間/秒）</option>
+        <option value="86400000">はやい（1日/秒）</option>
+        <option value="259200000">とてもはやい（3日/秒）</option>
+      </select>
+      <button id="now">いまにもどる</button>
+    </div>
+    <dl id="info"></dl>
+  </section>
+
+  <article>
+    <h2>この図の見かた</h2>
+    <p>北極の真上から、地球と月を見下ろしています。右には太陽があり、光は右から左へ進みます。地球も月も、右半分が昼で、左半分が夜です。</p>
+
+    <h3>地球は24時間で1回転、月は約27日で1周</h3>
+    <p>地球は、反時計回りに、約24時間で1回自転します。金色の点は東京です。東京が右（太陽側）に来たときが、東京の昼です。月は、地球のまわりを、同じく反時計回りに回り、約29.5日で、太陽との位置関係が元に戻ります（これが満ち欠けの周期です）。</p>
+
+    <h3>月は、いつも同じ面を地球に向けている</h3>
+    <p>月の縁にある金の点は、月の「地球側の面」の中心です。月がどこにいても、この点は、いつも地球のほうを向いています。月は、地球のまわりを1周する間に、ちょうど1回自転しているからです。<a href="../moon-age/#c2">月のページ</a>で、その理由（潮汐固定）を説明しています。</p>
+
+    <h3>満ち欠けは、光の当たり方</h3>
+    <p>月が太陽側（右）にいるときが<strong>新月</strong>です。地球から見ると、月の昼の側が、まるごと向こうを向いています。上に来ると<strong>上弦</strong>、反対側（左）に来ると<strong>満月</strong>、下に来ると<strong>下弦</strong>です。地球から見えるのは、月の地球側の面です。その面に、光がどれだけ当たっているかが、月の形です。</p>
+  </article>
+</main>
+
+<footer>
+  <small>
+    地球の写真：NASA Visible Earth, Blue Marble: Next Generation（2004年10月）<br>
+    月の地図：NASA Scientific Visualization Studio, CGI Moon Kit（LRO の観測データ。NASA/Goddard Space Flight Center/Arizona State University）<br>
+    月の位置：Meeus の簡略式による計算です。いまの日時から始まり、速さを変えて進められます。時刻は日本標準時（JST）です。
+  </small>
+</footer>
+
+<script src="astro.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
